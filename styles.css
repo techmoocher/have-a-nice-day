@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffedf2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    padding: 30px;
+    text-align: center;
+    transition: all 0.5s ease;
+    width: auto;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h2 {
+    color: #ff69b4;
+    font-size: 28px;
+}
+
+h1 {
+    color: #ff69b4;
+    font-size: 32px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #777;
+}
+
+.instruction {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.package {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 2s ease-in-out;
+    animation: expand 2s ease-in-out infinite alternate;
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.25);
+    }
+}
+
+.package-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: fixed;
+    font-size: 20px;
+    color: #ff69b4;
+    opacity: 0.6;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.box-top, .box-body, .box-ribbon {
+    display: none;
+}
+
+.box-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: #ff8dc7;
+    border-radius: 10px 10px 0 0;
+}
+
+.box-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-color: #ff69b4;
+    border-radius: 10px;
+}
+
+.box-ribbon {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 10px;
+    background-color: #ff4ba5;
+}
+
+.box-ribbon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 30px;
+    background-color: #ff4ba5;
+}
+
+.flower-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #ffcce5;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.flower-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message {
+    font-size: 20px;
+    margin: 15px 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.signature {
+    font-style: italic;
+    color: #ff69b4;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.bounce {
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
